@@ -9,12 +9,15 @@
 import UIKit
 import SnapKit
 
+/// Loads all the waypoints for the current selected Trip.
 class ChooseLocationVC: UIViewController {
+    /// The currently selected Trip.
     var trip: Trips?
-//    var arrayOfLocations: [Locations?]
-    // Creating table view
+
+    /// Table View
     var tableView = UITableView()
     
+    /// For CoreData Context
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     // Current Location
@@ -33,31 +36,31 @@ class ChooseLocationVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        viewNavbarTitle.text = trip?.name
-//        arrayOfLocations = trip?.locations
-//        var location = Locations()
-//        location.name = "First"
-//        location.alt = 0.0
-//        location.lat = 0.0
-//        trip?.addToLocations(location)
-        print("All the locations: ", trip?.locations)
         
+        // Setting the name to be the current trip's name.
+        viewNavbarTitle.text = trip?.name
+
+        // Add new destination [Location]
         let searchButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(ChooseLocationVC.addNewDestinationButtonPressed(_:)))
         self.navigationItem.rightBarButtonItem = searchButton
-        self.navigationItem.title = "CURRENT-VC-NAME"
         
+        // Temporary name
+        self.navigationItem.title = trip?.name
+        
+        // Layout
         loadEverything()
+        
+        // Table View
         addTableView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        // TODO: Load all locations for Trip
-        // No need maybe
+        // Load all locations for Trip into table view
         tableView.reloadData()
     }
     
     @objc func addNewDestinationButtonPressed(_ button: UIBarButtonItem) {
-        // TODO: Open Map VC
+        // Open Map VC to create new waypoints
         let mapVC = MapViewController()
         mapVC.trip = trip!
         self.navigationController?.pushViewController(mapVC, animated: true)
@@ -84,14 +87,12 @@ class ChooseLocationVC: UIViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "wayCell")
         tableView.delegate = self
         tableView.dataSource = self
-        
-        // Table View
-        //tableView.backgroundColor = view.backgroundColor
     }
 }
 extension ChooseLocationVC: UITableViewDataSource {
     // Table View Rows
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // Return 1 if no locations.
         let temp = trip?.locations?.count ?? 1
         if temp == 0 {
             return 1
@@ -107,7 +108,7 @@ extension ChooseLocationVC: UITableViewDataSource {
         print("THis is being called")
         var cell = tableView.dequeueReusableCell(withIdentifier: "wayCell", for: indexPath as IndexPath)
         
-        // TODO: Check if there are items in the list. If not say "Tap "+" to add waypoints"
+        // Check if there are items in the list. If not say "Tap "+" to add waypoints"
         if trip?.locations?.count == 0 {
             cell.textLabel?.text = "Tap to add waypoints"
         }
@@ -120,7 +121,7 @@ extension ChooseLocationVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // TODO: Open that location on the map
+        // Open that location on the map
         if (trip?.locations!.count)! > 0 {
             let location = trip?.locations?[indexPath.row] as! Locations
             let openVC = OpenAddressVC()
@@ -128,6 +129,7 @@ extension ChooseLocationVC: UITableViewDataSource {
             self.navigationController?.pushViewController(openVC, animated: true)
         }
         else{
+            // Open the map to add new waypoints if there's no points already.
             let mapVC = MapViewController()
             mapVC.trip = trip!
             self.navigationController?.pushViewController(mapVC, animated: true)
@@ -135,10 +137,11 @@ extension ChooseLocationVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        // Don't delete if there's no locations.
         if (trip?.locations!.count)! > 0 {
             if editingStyle == .delete {
                 let context = appDelegate.persistentContainer.viewContext
-                // TODO: Delete location from list and data
+                // Delete location from list and data
                 let location = trip?.locations?[indexPath.row] as! Locations
                 trip?.removeFromLocations(location)
                 do {
@@ -153,11 +156,5 @@ extension ChooseLocationVC: UITableViewDataSource {
     }
 }
 extension ChooseLocationVC: UITableViewDelegate {
-    //     Table View Cell Styling
-    //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    //        return 70
-    //    }
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        print("Deselected")
-    }
+// Not needed but will throw errors if not here.
 }

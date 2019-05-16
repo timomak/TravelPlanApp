@@ -10,39 +10,51 @@ import UIKit
 import SnapKit
 import CoreData
 
+/**
+ This Class is the first class that the user will see.
+ It will load all the trips into a table view and has a button to add new trips that will open NamingViewController.
+ When you press on a cell, it will open the waypoints in the ChooseDestinationVC.
+ Deleting cells can be done and will delete the Trip from the persistance.
+ Eveything is saved with CoreData.
+ */
+/// The First View when opening the app
 class MainViewController: UIViewController {
+    
+    /// Added for CoreData's Context
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     
     // Creating table view
     var tableView = UITableView()
     
-    // Model Array for trips
+    // CoreData Object Array for trips
     var trips: [Trips] = []
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
-        let searchButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(MainViewController.addNewDestinationButtonPressed(_:)))
-        self.navigationItem.rightBarButtonItem = searchButton
-        self.navigationItem.title = "Trips"
-//
-
-        addTableView()
-
+        // Adding button to navbar
+        let addButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(MainViewController.addNewDestinationButtonPressed(_:)))
+        self.navigationItem.rightBarButtonItem = addButton
         
+        // Setting title
+        self.navigationItem.title = "Trips"
+        
+        // Table View
+        addTableView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        // TODO: Save Core Data
+        // Reload all the trips into the table view every time the view appears.
         let coreData = CoreDataFunc()
         trips = coreData.readTrips()
         tableView.reloadData()
     }
     
     func addTableView() {
+        
+        // Programmatic constraints with SnapKit
         view.addSubview(tableView)
         tableView.snp.makeConstraints { (make) in
             make.top.bottom.left.right.equalToSuperview()
@@ -52,23 +64,14 @@ class MainViewController: UIViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "MyCell")
         tableView.delegate = self
         tableView.dataSource = self
-        
-        // Table View
-        //tableView.backgroundColor = view.backgroundColor
     }
     
 
     
     @objc func addNewDestinationButtonPressed(_ button: UIBarButtonItem) {
+        // Open new VC to create new trip
         let namingVC = NamingViewController()
-//        namingVC.previousController = self
         self.navigationController?.pushViewController(namingVC, animated: true)
-//        if searchController == nil {
-//            searchController = UISearchController(searchResultsController: nil)
-//        }
-//        searchController.hidesNavigationBarDuringPresentation = false
-//        self.searchController.searchBar.delegate = self
-//        present(searchController, animated: true, completion: nil)
     }
 }
 
@@ -76,18 +79,28 @@ class MainViewController: UIViewController {
 extension MainViewController: UITableViewDataSource {
     // Table View Rows
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return trips.count
+        let temp = trips.count
+        if temp == 0 {
+            return 1
+        }
+        return temp
     }
     
     // Table View Cells
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath as IndexPath)
-        cell.textLabel?.text = trips[indexPath.row].name
+        if trips.count == 0 {
+            // Just good user experience
+            cell.textLabel?.text = "Tap \"+\" to create a new Trip!"
+        }
+        else {
+            cell.textLabel?.text = trips[indexPath.row].name
+        }
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // TODO: Next VC to celect destination
+        // Open the locations for trip view.
         let chooseVC = ChooseLocationVC()
         chooseVC.trip = trips[indexPath.row]
         self.navigationController?.pushViewController(chooseVC, animated: true)
@@ -97,25 +110,21 @@ extension MainViewController: UITableViewDataSource {
         if editingStyle == .delete {
             let context = appDelegate.persistentContainer.viewContext
             do {
+                // Delete Core Data and array
                 context.delete(trips[indexPath.row])
                 trips.remove(at: indexPath.row)
             }
             catch {
                 print(error)
             }
+            // Reload so the user sees the change.
             tableView.reloadData()
         }
     }
 }
 
 extension MainViewController: UITableViewDelegate {
-    //     Table View Cell Styling
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 70
-//    }
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        print("Deselected")
-    }
+    // Don't really need it but it throws an error if removed.
 }
 
 

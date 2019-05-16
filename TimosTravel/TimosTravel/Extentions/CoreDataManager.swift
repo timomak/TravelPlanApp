@@ -13,6 +13,8 @@ class CoreDataFunc {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     
+    /// Save a Trip to CoreData by providing a string
+    /// - parameter name: Name of the Trip [String]
     func saveTrip(name:String) {
         let context = appDelegate.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: "Trips", in: context)
@@ -27,18 +29,7 @@ class CoreDataFunc {
         }
     }
     
-//    func returnAllLocationsForTrip(trip:Trips) -> [Locations] {
-//        let context = appDelegate.persistentContainer.viewContext
-//        let myFetch:NSFetchRequest<Locations> = context.fetchRequest()
-//        let myPredicate = NSPredicate(format: "Trips-relationship == %@", (myTransferdObject?.name!)!)
-//        myFetch.predicate = myPredicate
-//        do {
-//            usersList = try myContext.fetch(myFetch)
-//        }catch{
-//            print(error)
-//        }
-//    }
-    
+    /// Will return all the Trips saved to core data in an array.
     func readTrips() -> [Trips] {
         let context = appDelegate.persistentContainer.viewContext
         let request = NSFetchRequest<Trips>(entityName: "Trips")
@@ -51,43 +42,5 @@ class CoreDataFunc {
             print("Failed")
             return []
         }
-    }
-    
-    func readAllLocations() {
-        let context = appDelegate.persistentContainer.viewContext
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Locations")
-        //request.predicate = NSPredicate(format: "age = %@", "12")
-        request.returnsObjectsAsFaults = false
-        do {
-            let result = try context.fetch(request)
-            for data in result as! [NSManagedObject] {
-                print("Reading All:", data.value(forKey: "name") as! String)
-            }
-            
-        } catch {
-            
-            print("Failed")
-        }
-    }
-    
-    func deleteTrip() {
-        let context = appDelegate.persistentContainer.viewContext
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Item")
-        do {
-            var result = try context.fetch(request) as! [NSManagedObject]
-            for item in result {
-                context.delete(item)
-            }
-            do {
-                try context.save()
-            }
-            catch {
-                print(error)
-            }
-        } catch {
-            
-            print("Failed")
-        }
-        
     }
 }

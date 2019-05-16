@@ -9,6 +9,7 @@
 import UIKit
 import SnapKit
 
+/// View Controller to create new trips.
 class NamingViewController: UIViewController {
     // Textfield for new name
     private let nameTextField: UITextField = {
@@ -30,21 +31,22 @@ class NamingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Button to save the name for Trip
         let saveButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.save, target: self, action: #selector(NamingViewController.saveButtonPressed(_:)))
         self.navigationItem.rightBarButtonItem = saveButton
         self.navigationItem.title = "Trips"
         
-        print("In Naming VC")
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         self.navigationController?.title = "New Trip"
+        
+        // Layout
         loadInputItems()
     }
     
     @objc func saveButtonPressed(_ button: UIBarButtonItem) {
         
-        print("Named:" , nameTextField.text ?? "🤷‍♂️")
-        
-        // TODO: Save Name data to Core Data
+        // Saving Name data to Core Data [Creating a new Trip into CoreData]
         let coreData = CoreDataFunc()
         coreData.saveTrip(name: nameTextField.text ?? "🤷‍♂️")
         
