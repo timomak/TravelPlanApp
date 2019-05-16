@@ -74,6 +74,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         super.viewWillAppear(animated)
         
         activityIndicator.center = self.view.center
+
     }
     
     func addMapToView() {

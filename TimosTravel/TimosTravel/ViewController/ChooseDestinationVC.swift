@@ -52,7 +52,8 @@ class ChooseLocationVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         // TODO: Load all locations for Trip
-        
+        // No need maybe
+        tableView.reloadData()
     }
     
     @objc func addNewDestinationButtonPressed(_ button: UIBarButtonItem) {
@@ -81,7 +82,7 @@ class ChooseLocationVC: UIViewController {
         
         // Register Table View Cells
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "wayCell")
-//        tableView.delegate = self
+        tableView.delegate = self
         tableView.dataSource = self
         
         // Table View
@@ -91,20 +92,33 @@ class ChooseLocationVC: UIViewController {
 extension ChooseLocationVC: UITableViewDataSource {
     // Table View Rows
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return trip?.locations?.count ?? 1
     }
     
     // Table View Cells
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         var cell = tableView.dequeueReusableCell(withIdentifier: "wayCell", for: indexPath as IndexPath)
         
         // TODO: Check if there are items in the list. If not say "Tap "+" to add waypoints"
-        cell.textLabel?.text = "Working"
+        if trip?.locations?.count == 0 {
+            cell.textLabel?.text = "Tap \"+\" to add waypoints"
+        }
+        else {
+            let location = trip?.locations?[indexPath.row] as! Locations
+            cell.textLabel?.text = location.name
+        }
+            
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // TODO: Open that location on the map
+        
+        let location = trip?.locations?[indexPath.row] as! Locations
+        let openVC = OpenAddressVC()
+        openVC.location = location
+        self.navigationController?.pushViewController(openVC, animated: true)
         
     }
     
@@ -112,5 +126,14 @@ extension ChooseLocationVC: UITableViewDataSource {
         if editingStyle == .delete {
             // TODO: Delete location from list and data
         }
+    }
+}
+extension ChooseLocationVC: UITableViewDelegate {
+    //     Table View Cell Styling
+    //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    //        return 70
+    //    }
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        print("Deselected")
     }
 }

@@ -22,6 +22,11 @@
 		F340FEA3228CFC2E008640F5 /* ButtonExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F340FEA2228CFC2E008640F5 /* ButtonExtentions.swift */; };
 		F340FEA6228D0A4A008640F5 /* ChooseDestinationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F340FEA5228D0A4A008640F5 /* ChooseDestinationVC.swift */; };
 		F340FEB0228D1963008640F5 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F340FEAF228D1963008640F5 /* CoreDataManager.swift */; };
+		F38A666F228D303900590850 /* Trips+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38A666B228D303900590850 /* Trips+CoreDataProperties.swift */; };
+		F38A6670228D303900590850 /* Locations+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38A666C228D303900590850 /* Locations+CoreDataClass.swift */; };
+		F38A6671228D303900590850 /* Locations+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38A666D228D303900590850 /* Locations+CoreDataProperties.swift */; };
+		F38A6672228D303900590850 /* Trips+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38A666E228D303900590850 /* Trips+CoreDataClass.swift */; };
+		F38A6674228D322300590850 /* OpenAddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38A6673228D322300590850 /* OpenAddressVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +61,11 @@
 		F340FEA2228CFC2E008640F5 /* ButtonExtentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonExtentions.swift; sourceTree = "<group>"; };
 		F340FEA5228D0A4A008640F5 /* ChooseDestinationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDestinationVC.swift; sourceTree = "<group>"; };
 		F340FEAF228D1963008640F5 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		F38A666B228D303900590850 /* Trips+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Trips+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		F38A666C228D303900590850 /* Locations+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Locations+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		F38A666D228D303900590850 /* Locations+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Locations+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		F38A666E228D303900590850 /* Trips+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Trips+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		F38A6673228D322300590850 /* OpenAddressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAddressVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +153,10 @@
 		F340FE9C228CF315008640F5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F38A666E228D303900590850 /* Trips+CoreDataClass.swift */,
+				F38A666B228D303900590850 /* Trips+CoreDataProperties.swift */,
+				F38A666C228D303900590850 /* Locations+CoreDataClass.swift */,
+				F38A666D228D303900590850 /* Locations+CoreDataProperties.swift */,
 				F340FE98228CF2FD008640F5 /* LocationModel.swift */,
 				F340FE9A228CF30F008640F5 /* TripModel.swift */,
 			);
@@ -155,6 +169,7 @@
 				F340FE9E228CF66F008640F5 /* MainViewController.swift */,
 				F340FEA0228CFBFB008640F5 /* NamingViewController.swift */,
 				F340FEA5228D0A4A008640F5 /* ChooseDestinationVC.swift */,
+				F38A6673228D322300590850 /* OpenAddressVC.swift */,
 				F340FE75228CEB5B008640F5 /* MapViewController.swift */,
 			);
 			path = ViewController;
@@ -323,8 +338,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F38A6670228D303900590850 /* Locations+CoreDataClass.swift in Sources */,
 				F340FEA1228CFBFB008640F5 /* NamingViewController.swift in Sources */,
+				F38A6671228D303900590850 /* Locations+CoreDataProperties.swift in Sources */,
 				F340FE99228CF2FD008640F5 /* LocationModel.swift in Sources */,
+				F38A6672228D303900590850 /* Trips+CoreDataClass.swift in Sources */,
+				F38A6674228D322300590850 /* OpenAddressVC.swift in Sources */,
 				F340FE76228CEB5B008640F5 /* MapViewController.swift in Sources */,
 				F340FE7C228CEB5B008640F5 /* TimosTravel.xcdatamodeld in Sources */,
 				F340FE9F228CF66F008640F5 /* MainViewController.swift in Sources */,
@@ -333,6 +352,7 @@
 				F340FEA3228CFC2E008640F5 /* ButtonExtentions.swift in Sources */,
 				F340FE74228CEB5B008640F5 /* AppDelegate.swift in Sources */,
 				F340FEB0228D1963008640F5 /* CoreDataManager.swift in Sources */,
+				F38A666F228D303900590850 /* Trips+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

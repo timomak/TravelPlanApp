@@ -2,18 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Trips+CoreDataClass.swift">
-   </FileRef>
-   <FileRef
-      location = "group:Trips+CoreDataProperties.swift">
-   </FileRef>
-   <FileRef
-      location = "group:Locations+CoreDataClass.swift">
-   </FileRef>
-   <FileRef
-      location = "group:Locations+CoreDataProperties.swift">
-   </FileRef>
-   <FileRef
       location = "group:TimosTravel.xcodeproj">
    </FileRef>
    <FileRef
