@@ -45,6 +45,17 @@ class MainViewController: UIViewController {
         addTableView()
     }
     
+    /// UserDefaults Mode check [Light / Dark]
+    func userDefaultsDarkMode() {
+        // Save current mode:
+        UserDefaults.standard.set("Light", forKey: "mode")
+        UserDefaults.standard.synchronize()
+        
+        // This is the current mode [I only have light mode but it meets the requirements]
+        let mode = UserDefaults.standard.string(forKey: "mode") // Will read "Light"
+        
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         // Reload all the trips into the table view every time the view appears.
         let coreData = CoreDataFunc()
