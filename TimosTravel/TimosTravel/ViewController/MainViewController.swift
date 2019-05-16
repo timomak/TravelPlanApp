@@ -8,8 +8,11 @@
 
 import UIKit
 import SnapKit
+import CoreData
 
 class MainViewController: UIViewController {
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
     
     // Creating table view
     var tableView = UITableView()
@@ -92,7 +95,15 @@ extension MainViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            
+            let context = appDelegate.persistentContainer.viewContext
+            do {
+                context.delete(trips[indexPath.row])
+                trips.remove(at: indexPath.row)
+            }
+            catch {
+                print(error)
+            }
+            tableView.reloadData()
         }
     }
 }

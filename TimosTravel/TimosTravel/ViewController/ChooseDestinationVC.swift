@@ -125,6 +125,9 @@ extension ChooseLocationVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // TODO: Delete location from list and data
+            let location = trip?.locations?[indexPath.row] as! Locations
+            trip?.removeFromLocations(location)
+            tableView.reloadData()
         }
     }
 }

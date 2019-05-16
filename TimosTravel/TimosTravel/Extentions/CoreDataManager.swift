@@ -70,7 +70,7 @@ class CoreDataFunc {
         }
     }
     
-    func deleteAll() {
+    func deleteTrip() {
         let context = appDelegate.persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Item")
         do {
