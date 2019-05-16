@@ -31,8 +31,19 @@ class ChooseLocationVC: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         
+        let searchButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(ChooseLocationVC.addNewDestinationButtonPressed(_:)))
+        self.navigationItem.rightBarButtonItem = searchButton
+        self.navigationItem.title = "CURRENT-VC-NAME"
+        
         loadEverything()
         addTableView()
+    }
+    
+    @objc func addNewDestinationButtonPressed(_ button: UIBarButtonItem) {
+        // TODO: Open Map VC
+        let mapVC = MapViewController()
+        self.navigationController?.pushViewController(mapVC, animated: true)
+
     }
     
     func loadEverything() {
