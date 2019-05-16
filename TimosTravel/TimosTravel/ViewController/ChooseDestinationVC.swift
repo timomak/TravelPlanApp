@@ -15,7 +15,7 @@ class ChooseLocationVC: UIViewController {
     // Creating table view
     var tableView = UITableView()
     
-    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     // Current Location
     let viewNavbarTitle: UITextView = {
@@ -92,17 +92,24 @@ class ChooseLocationVC: UIViewController {
 extension ChooseLocationVC: UITableViewDataSource {
     // Table View Rows
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return trip?.locations?.count ?? 1
+        let temp = trip?.locations?.count ?? 1
+        if temp == 0 {
+            return 1
+        }
+        else {
+            return temp
+        }
+        return temp
     }
     
     // Table View Cells
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        print("THis is being called")
         var cell = tableView.dequeueReusableCell(withIdentifier: "wayCell", for: indexPath as IndexPath)
         
         // TODO: Check if there are items in the list. If not say "Tap "+" to add waypoints"
         if trip?.locations?.count == 0 {
-            cell.textLabel?.text = "Tap \"+\" to add waypoints"
+            cell.textLabel?.text = "Tap to add waypoints"
         }
         else {
             let location = trip?.locations?[indexPath.row] as! Locations
@@ -114,20 +121,34 @@ extension ChooseLocationVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // TODO: Open that location on the map
-        
-        let location = trip?.locations?[indexPath.row] as! Locations
-        let openVC = OpenAddressVC()
-        openVC.location = location
-        self.navigationController?.pushViewController(openVC, animated: true)
-        
+        if (trip?.locations!.count)! > 0 {
+            let location = trip?.locations?[indexPath.row] as! Locations
+            let openVC = OpenAddressVC()
+            openVC.location = location
+            self.navigationController?.pushViewController(openVC, animated: true)
+        }
+        else{
+            let mapVC = MapViewController()
+            mapVC.trip = trip!
+            self.navigationController?.pushViewController(mapVC, animated: true)
+        }
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // TODO: Delete location from list and data
-            let location = trip?.locations?[indexPath.row] as! Locations
-            trip?.removeFromLocations(location)
-            tableView.reloadData()
+        if (trip?.locations!.count)! > 0 {
+            if editingStyle == .delete {
+                let context = appDelegate.persistentContainer.viewContext
+                // TODO: Delete location from list and data
+                let location = trip?.locations?[indexPath.row] as! Locations
+                trip?.removeFromLocations(location)
+                do {
+                    try context.save()
+                }catch {
+                    print(error)
+                }
+                
+                tableView.reloadData()
+            }
         }
     }
 }
