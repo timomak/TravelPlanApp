@@ -22,10 +22,13 @@
 import UIKit
 import MapKit
 import SnapKit
+import CoreData
 
 class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UISearchBarDelegate {
     
-    // MARK: - Outlets
+    // MARK: - Needed for data
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var trip: Trips? 
     
 //    @IBOutlet weak var mapView: MKMapView!
     var mapView: MKMapView = MKMapView()
@@ -137,8 +140,41 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             
             let pinAnnotationView = MKPinAnnotationView(annotation: pointAnnotation, reuseIdentifier: nil)
             
-            let newLocation = Location(name: "first", address: pinAnnotationView)
             
+            // TODO: Save location with core data
+            let coreData = CoreDataFunc()
+            
+            let context = self!.appDelegate.persistentContainer.viewContext
+//            let entity = NSEntityDescription.entity(forEntityName: "Locations", in: context)
+//            let newLocation = NSManagedObject(entity: entity!, insertInto: context)
+//
+//            newLocation.setValue("Address", forKey: "name")
+//            newLocation.setValue(pointAnnotation.coordinate.longitude, forKey: "alt")
+//            newLocation.setValue(pointAnnotation.coordinate.latitude, forKey: "lat")
+            print("Everything working here.")
+            let newLocation = Locations(context: context)
+            newLocation.name = searchBar.text
+            newLocation.alt = pointAnnotation.coordinate.longitude
+            newLocation.lat = pointAnnotation.coordinate.latitude
+            
+            print(newLocation)
+            self!.trip!.addToLocations(newLocation)
+            do{
+                try context.save()
+            }
+            catch {
+                print(error)
+            }
+            
+            print("\nSAVED\n")
+            
+//            coreData.readTrips()
+//            coreData.readAllLocations()
+//            print(self!.trip!.locations as Any)
+//            newLocation.setValue(pinAnnotationView.coordinate.latitude, forKey: "lat")
+//            coreData.saveLocation(name: searchBar.text ?? "🤷‍♂️", alt: pointAnnotation.coordinate.lo, lat: pointAnnotation.coordinate.latitude)
+//            coreData.readPerson()
+            // TODO: Link location with Trips
             // MARK: Setting the pin point.
             self!.mapView.centerCoordinate = pointAnnotation.coordinate
             self!.mapView.addAnnotation(pinAnnotationView.annotation!)

@@ -10,9 +10,12 @@ import UIKit
 import SnapKit
 
 class ChooseLocationVC: UIViewController {
-    
+    var trip: Trips?
+//    var arrayOfLocations: [Locations?]
     // Creating table view
     var tableView = UITableView()
+    
+    
     
     // Current Location
     let viewNavbarTitle: UITextView = {
@@ -30,6 +33,14 @@ class ChooseLocationVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        viewNavbarTitle.text = trip?.name
+//        arrayOfLocations = trip?.locations
+//        var location = Locations()
+//        location.name = "First"
+//        location.alt = 0.0
+//        location.lat = 0.0
+//        trip?.addToLocations(location)
+        print("All the locations: ", trip?.locations)
         
         let searchButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(ChooseLocationVC.addNewDestinationButtonPressed(_:)))
         self.navigationItem.rightBarButtonItem = searchButton
@@ -39,9 +50,15 @@ class ChooseLocationVC: UIViewController {
         addTableView()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        // TODO: Load all locations for Trip
+        
+    }
+    
     @objc func addNewDestinationButtonPressed(_ button: UIBarButtonItem) {
         // TODO: Open Map VC
         let mapVC = MapViewController()
+        mapVC.trip = trip!
         self.navigationController?.pushViewController(mapVC, animated: true)
 
     }

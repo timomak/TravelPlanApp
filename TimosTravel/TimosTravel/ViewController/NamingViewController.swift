@@ -42,12 +42,11 @@ class NamingViewController: UIViewController {
     
     @objc func saveButtonPressed(_ button: UIBarButtonItem) {
         
-        let newTrip = Trips()
-        print(nameTextField.text ?? "🤷‍♂️")
-        newTrip.name = nameTextField.text ?? "🤷‍♂️"
+        print("Named:" , nameTextField.text ?? "🤷‍♂️")
         
         // TODO: Save Name data to Core Data
-        
+        let coreData = CoreDataFunc()
+        coreData.saveTrip(name: nameTextField.text ?? "🤷‍♂️")
         
         self.navigationController?.popViewController(animated: true)
     }

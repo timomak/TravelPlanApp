@@ -25,17 +25,18 @@ class MainViewController: UIViewController {
         let searchButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(MainViewController.addNewDestinationButtonPressed(_:)))
         self.navigationItem.rightBarButtonItem = searchButton
         self.navigationItem.title = "Trips"
-        
-        let trip1 = Trips()
-        trip1.name = "Mexico"
+//
+
         addTableView()
-        trips.append(trip1)
-        tableView.reloadData()
+
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
         // TODO: Save Core Data
+        let coreData = CoreDataFunc()
+        trips = coreData.readTrips()
+        tableView.reloadData()
     }
     
     func addTableView() {
@@ -85,6 +86,7 @@ extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // TODO: Next VC to celect destination
         let chooseVC = ChooseLocationVC()
+        chooseVC.trip = trips[indexPath.row]
         self.navigationController?.pushViewController(chooseVC, animated: true)
     }
     

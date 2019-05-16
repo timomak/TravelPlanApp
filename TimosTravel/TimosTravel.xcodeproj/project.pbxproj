@@ -21,6 +21,7 @@
 		F340FEA1228CFBFB008640F5 /* NamingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F340FEA0228CFBFB008640F5 /* NamingViewController.swift */; };
 		F340FEA3228CFC2E008640F5 /* ButtonExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F340FEA2228CFC2E008640F5 /* ButtonExtentions.swift */; };
 		F340FEA6228D0A4A008640F5 /* ChooseDestinationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F340FEA5228D0A4A008640F5 /* ChooseDestinationVC.swift */; };
+		F340FEB0228D1963008640F5 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F340FEAF228D1963008640F5 /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		F340FEA0228CFBFB008640F5 /* NamingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamingViewController.swift; sourceTree = "<group>"; };
 		F340FEA2228CFC2E008640F5 /* ButtonExtentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonExtentions.swift; sourceTree = "<group>"; };
 		F340FEA5228D0A4A008640F5 /* ChooseDestinationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDestinationVC.swift; sourceTree = "<group>"; };
+		F340FEAF228D1963008640F5 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,8 +119,8 @@
 		F340FE72228CEB5B008640F5 /* TimosTravel */ = {
 			isa = PBXGroup;
 			children = (
-				F340FEA4228CFC33008640F5 /* Extentions */,
 				F340FE73228CEB5B008640F5 /* AppDelegate.swift */,
+				F340FEA4228CFC33008640F5 /* Extentions */,
 				F340FE9D228CF327008640F5 /* ViewController */,
 				F340FE9C228CF315008640F5 /* Model */,
 				F340FE7D228CEB5C008640F5 /* Assets.xcassets */,
@@ -151,8 +153,8 @@
 			isa = PBXGroup;
 			children = (
 				F340FE9E228CF66F008640F5 /* MainViewController.swift */,
-				F340FEA5228D0A4A008640F5 /* ChooseDestinationVC.swift */,
 				F340FEA0228CFBFB008640F5 /* NamingViewController.swift */,
+				F340FEA5228D0A4A008640F5 /* ChooseDestinationVC.swift */,
 				F340FE75228CEB5B008640F5 /* MapViewController.swift */,
 			);
 			path = ViewController;
@@ -162,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				F340FEA2228CFC2E008640F5 /* ButtonExtentions.swift */,
+				F340FEAF228D1963008640F5 /* CoreDataManager.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				F340FE9B228CF30F008640F5 /* TripModel.swift in Sources */,
 				F340FEA3228CFC2E008640F5 /* ButtonExtentions.swift in Sources */,
 				F340FE74228CEB5B008640F5 /* AppDelegate.swift in Sources */,
+				F340FEB0228D1963008640F5 /* CoreDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
