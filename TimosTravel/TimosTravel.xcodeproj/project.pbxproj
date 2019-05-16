@@ -1,0 +1,603 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		65AA11D98F22369B4E88082A /* Pods_TimosTravel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67F84C60AE3E878B981E15F8 /* Pods_TimosTravel.framework */; };
+		F340FE74228CEB5B008640F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F340FE73228CEB5B008640F5 /* AppDelegate.swift */; };
+		F340FE76228CEB5B008640F5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F340FE75228CEB5B008640F5 /* MapViewController.swift */; };
+		F340FE7C228CEB5B008640F5 /* TimosTravel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F340FE7A228CEB5B008640F5 /* TimosTravel.xcdatamodeld */; };
+		F340FE7E228CEB5C008640F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F340FE7D228CEB5C008640F5 /* Assets.xcassets */; };
+		F340FE81228CEB5C008640F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F340FE7F228CEB5C008640F5 /* LaunchScreen.storyboard */; };
+		F340FE8C228CEB5C008640F5 /* TimosTravelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F340FE8B228CEB5C008640F5 /* TimosTravelTests.swift */; };
+		F340FE97228CF205008640F5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F340FE96228CF205008640F5 /* MapKit.framework */; };
+		F340FE99228CF2FD008640F5 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F340FE98228CF2FD008640F5 /* LocationModel.swift */; };
+		F340FE9B228CF30F008640F5 /* TripModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F340FE9A228CF30F008640F5 /* TripModel.swift */; };
+		F340FE9F228CF66F008640F5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F340FE9E228CF66F008640F5 /* MainViewController.swift */; };
+		F340FEA1228CFBFB008640F5 /* NamingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F340FEA0228CFBFB008640F5 /* NamingViewController.swift */; };
+		F340FEA3228CFC2E008640F5 /* ButtonExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F340FEA2228CFC2E008640F5 /* ButtonExtentions.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F340FE88228CEB5C008640F5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F340FE68228CEB5B008640F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F340FE6F228CEB5B008640F5;
+			remoteInfo = TimosTravel;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		67F84C60AE3E878B981E15F8 /* Pods_TimosTravel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimosTravel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABD553175B2B72E471A1C6BD /* Pods-TimosTravel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimosTravel.debug.xcconfig"; path = "Target Support Files/Pods-TimosTravel/Pods-TimosTravel.debug.xcconfig"; sourceTree = "<group>"; };
+		E4B600408AE54B04EAE65C93 /* Pods-TimosTravel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimosTravel.release.xcconfig"; path = "Target Support Files/Pods-TimosTravel/Pods-TimosTravel.release.xcconfig"; sourceTree = "<group>"; };
+		F340FE70228CEB5B008640F5 /* TimosTravel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimosTravel.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F340FE73228CEB5B008640F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F340FE75228CEB5B008640F5 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		F340FE7B228CEB5B008640F5 /* TimosTravel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TimosTravel.xcdatamodel; sourceTree = "<group>"; };
+		F340FE7D228CEB5C008640F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F340FE80228CEB5C008640F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F340FE82228CEB5C008640F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F340FE87228CEB5C008640F5 /* TimosTravelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimosTravelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F340FE8B228CEB5C008640F5 /* TimosTravelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimosTravelTests.swift; sourceTree = "<group>"; };
+		F340FE8D228CEB5C008640F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F340FE96228CF205008640F5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		F340FE98228CF2FD008640F5 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
+		F340FE9A228CF30F008640F5 /* TripModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripModel.swift; sourceTree = "<group>"; };
+		F340FE9E228CF66F008640F5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		F340FEA0228CFBFB008640F5 /* NamingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamingViewController.swift; sourceTree = "<group>"; };
+		F340FEA2228CFC2E008640F5 /* ButtonExtentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonExtentions.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F340FE6D228CEB5B008640F5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F340FE97228CF205008640F5 /* MapKit.framework in Frameworks */,
+				65AA11D98F22369B4E88082A /* Pods_TimosTravel.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F340FE84228CEB5C008640F5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5C32619BF297ADEB070460DC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F340FE96228CF205008640F5 /* MapKit.framework */,
+				67F84C60AE3E878B981E15F8 /* Pods_TimosTravel.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D9138FF9A023861E62E77252 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ABD553175B2B72E471A1C6BD /* Pods-TimosTravel.debug.xcconfig */,
+				E4B600408AE54B04EAE65C93 /* Pods-TimosTravel.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F340FE67228CEB5B008640F5 = {
+			isa = PBXGroup;
+			children = (
+				F340FE72228CEB5B008640F5 /* TimosTravel */,
+				F340FE8A228CEB5C008640F5 /* TimosTravelTests */,
+				F340FE71228CEB5B008640F5 /* Products */,
+				D9138FF9A023861E62E77252 /* Pods */,
+				5C32619BF297ADEB070460DC /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F340FE71228CEB5B008640F5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F340FE70228CEB5B008640F5 /* TimosTravel.app */,
+				F340FE87228CEB5C008640F5 /* TimosTravelTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F340FE72228CEB5B008640F5 /* TimosTravel */ = {
+			isa = PBXGroup;
+			children = (
+				F340FEA4228CFC33008640F5 /* Extentions */,
+				F340FE73228CEB5B008640F5 /* AppDelegate.swift */,
+				F340FE9D228CF327008640F5 /* ViewController */,
+				F340FE9C228CF315008640F5 /* Model */,
+				F340FE7D228CEB5C008640F5 /* Assets.xcassets */,
+				F340FE7F228CEB5C008640F5 /* LaunchScreen.storyboard */,
+				F340FE82228CEB5C008640F5 /* Info.plist */,
+				F340FE7A228CEB5B008640F5 /* TimosTravel.xcdatamodeld */,
+			);
+			path = TimosTravel;
+			sourceTree = "<group>";
+		};
+		F340FE8A228CEB5C008640F5 /* TimosTravelTests */ = {
+			isa = PBXGroup;
+			children = (
+				F340FE8B228CEB5C008640F5 /* TimosTravelTests.swift */,
+				F340FE8D228CEB5C008640F5 /* Info.plist */,
+			);
+			path = TimosTravelTests;
+			sourceTree = "<group>";
+		};
+		F340FE9C228CF315008640F5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F340FE98228CF2FD008640F5 /* LocationModel.swift */,
+				F340FE9A228CF30F008640F5 /* TripModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F340FE9D228CF327008640F5 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F340FE9E228CF66F008640F5 /* MainViewController.swift */,
+				F340FEA0228CFBFB008640F5 /* NamingViewController.swift */,
+				F340FE75228CEB5B008640F5 /* MapViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		F340FEA4228CFC33008640F5 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				F340FEA2228CFC2E008640F5 /* ButtonExtentions.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F340FE6F228CEB5B008640F5 /* TimosTravel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F340FE90228CEB5C008640F5 /* Build configuration list for PBXNativeTarget "TimosTravel" */;
+			buildPhases = (
+				6A218AC4D582D2F6FF1A7F32 /* [CP] Check Pods Manifest.lock */,
+				F340FE6C228CEB5B008640F5 /* Sources */,
+				F340FE6D228CEB5B008640F5 /* Frameworks */,
+				F340FE6E228CEB5B008640F5 /* Resources */,
+				F0FBCB21411801310F42F929 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TimosTravel;
+			productName = TimosTravel;
+			productReference = F340FE70228CEB5B008640F5 /* TimosTravel.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F340FE86228CEB5C008640F5 /* TimosTravelTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F340FE93228CEB5C008640F5 /* Build configuration list for PBXNativeTarget "TimosTravelTests" */;
+			buildPhases = (
+				F340FE83228CEB5C008640F5 /* Sources */,
+				F340FE84228CEB5C008640F5 /* Frameworks */,
+				F340FE85228CEB5C008640F5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F340FE89228CEB5C008640F5 /* PBXTargetDependency */,
+			);
+			name = TimosTravelTests;
+			productName = TimosTravelTests;
+			productReference = F340FE87228CEB5C008640F5 /* TimosTravelTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F340FE68228CEB5B008640F5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Timofey Makhlay";
+				TargetAttributes = {
+					F340FE6F228CEB5B008640F5 = {
+						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					F340FE86228CEB5C008640F5 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = F340FE6F228CEB5B008640F5;
+					};
+				};
+			};
+			buildConfigurationList = F340FE6B228CEB5B008640F5 /* Build configuration list for PBXProject "TimosTravel" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F340FE67228CEB5B008640F5;
+			productRefGroup = F340FE71228CEB5B008640F5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F340FE6F228CEB5B008640F5 /* TimosTravel */,
+				F340FE86228CEB5C008640F5 /* TimosTravelTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F340FE6E228CEB5B008640F5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F340FE81228CEB5C008640F5 /* LaunchScreen.storyboard in Resources */,
+				F340FE7E228CEB5C008640F5 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F340FE85228CEB5C008640F5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6A218AC4D582D2F6FF1A7F32 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TimosTravel-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F0FBCB21411801310F42F929 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TimosTravel/Pods-TimosTravel-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TimosTravel/Pods-TimosTravel-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F340FE6C228CEB5B008640F5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F340FEA1228CFBFB008640F5 /* NamingViewController.swift in Sources */,
+				F340FE99228CF2FD008640F5 /* LocationModel.swift in Sources */,
+				F340FE76228CEB5B008640F5 /* MapViewController.swift in Sources */,
+				F340FE7C228CEB5B008640F5 /* TimosTravel.xcdatamodeld in Sources */,
+				F340FE9F228CF66F008640F5 /* MainViewController.swift in Sources */,
+				F340FE9B228CF30F008640F5 /* TripModel.swift in Sources */,
+				F340FEA3228CFC2E008640F5 /* ButtonExtentions.swift in Sources */,
+				F340FE74228CEB5B008640F5 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F340FE83228CEB5C008640F5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F340FE8C228CEB5C008640F5 /* TimosTravelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F340FE89228CEB5C008640F5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F340FE6F228CEB5B008640F5 /* TimosTravel */;
+			targetProxy = F340FE88228CEB5C008640F5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F340FE7F228CEB5C008640F5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F340FE80228CEB5C008640F5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F340FE8E228CEB5C008640F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F340FE8F228CEB5C008640F5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F340FE91228CEB5C008640F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ABD553175B2B72E471A1C6BD /* Pods-TimosTravel.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SAZ2DLKCVY;
+				INFOPLIST_FILE = TimosTravel/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Timofey-Makhlay.TimosTravel";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F340FE92228CEB5C008640F5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4B600408AE54B04EAE65C93 /* Pods-TimosTravel.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SAZ2DLKCVY;
+				INFOPLIST_FILE = TimosTravel/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Timofey-Makhlay.TimosTravel";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F340FE94228CEB5C008640F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SAZ2DLKCVY;
+				INFOPLIST_FILE = TimosTravelTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Timofey-Makhlay.TimosTravelTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TimosTravel.app/TimosTravel";
+			};
+			name = Debug;
+		};
+		F340FE95228CEB5C008640F5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SAZ2DLKCVY;
+				INFOPLIST_FILE = TimosTravelTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Timofey-Makhlay.TimosTravelTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TimosTravel.app/TimosTravel";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F340FE6B228CEB5B008640F5 /* Build configuration list for PBXProject "TimosTravel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F340FE8E228CEB5C008640F5 /* Debug */,
+				F340FE8F228CEB5C008640F5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F340FE90228CEB5C008640F5 /* Build configuration list for PBXNativeTarget "TimosTravel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F340FE91228CEB5C008640F5 /* Debug */,
+				F340FE92228CEB5C008640F5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F340FE93228CEB5C008640F5 /* Build configuration list for PBXNativeTarget "TimosTravelTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F340FE94228CEB5C008640F5 /* Debug */,
+				F340FE95228CEB5C008640F5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F340FE7A228CEB5B008640F5 /* TimosTravel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F340FE7B228CEB5B008640F5 /* TimosTravel.xcdatamodel */,
+			);
+			currentVersion = F340FE7B228CEB5B008640F5 /* TimosTravel.xcdatamodel */;
+			path = TimosTravel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = F340FE68228CEB5B008640F5 /* Project object */;
+}
