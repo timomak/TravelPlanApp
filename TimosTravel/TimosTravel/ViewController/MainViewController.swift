@@ -57,7 +57,7 @@ class MainViewController: UIViewController {
     
     @objc func addNewDestinationButtonPressed(_ button: UIBarButtonItem) {
         let namingVC = NamingViewController()
-        namingVC.previousController = self
+//        namingVC.previousController = self
         self.navigationController?.pushViewController(namingVC, animated: true)
 //        if searchController == nil {
 //            searchController = UISearchController(searchResultsController: nil)
@@ -83,9 +83,9 @@ extension MainViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //        let categorySpendingController = CategorySpendingController()
-        //        categorySpendingController.currentCategory = categories[indexPath.row]
-        //        self.present(categorySpendingController, animated: true)
+        // TODO: Next VC to celect destination
+        let chooseVC = ChooseLocationVC()
+        self.navigationController?.pushViewController(chooseVC, animated: true)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

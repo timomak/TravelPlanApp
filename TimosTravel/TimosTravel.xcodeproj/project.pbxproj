@@ -20,6 +20,7 @@
 		F340FE9F228CF66F008640F5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F340FE9E228CF66F008640F5 /* MainViewController.swift */; };
 		F340FEA1228CFBFB008640F5 /* NamingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F340FEA0228CFBFB008640F5 /* NamingViewController.swift */; };
 		F340FEA3228CFC2E008640F5 /* ButtonExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F340FEA2228CFC2E008640F5 /* ButtonExtentions.swift */; };
+		F340FEA6228D0A4A008640F5 /* ChooseDestinationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F340FEA5228D0A4A008640F5 /* ChooseDestinationVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		F340FE9E228CF66F008640F5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F340FEA0228CFBFB008640F5 /* NamingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamingViewController.swift; sourceTree = "<group>"; };
 		F340FEA2228CFC2E008640F5 /* ButtonExtentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonExtentions.swift; sourceTree = "<group>"; };
+		F340FEA5228D0A4A008640F5 /* ChooseDestinationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDestinationVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				F340FE9E228CF66F008640F5 /* MainViewController.swift */,
+				F340FEA5228D0A4A008640F5 /* ChooseDestinationVC.swift */,
 				F340FEA0228CFBFB008640F5 /* NamingViewController.swift */,
 				F340FE75228CEB5B008640F5 /* MapViewController.swift */,
 			);
@@ -322,6 +325,7 @@
 				F340FE76228CEB5B008640F5 /* MapViewController.swift in Sources */,
 				F340FE7C228CEB5B008640F5 /* TimosTravel.xcdatamodeld in Sources */,
 				F340FE9F228CF66F008640F5 /* MainViewController.swift in Sources */,
+				F340FEA6228D0A4A008640F5 /* ChooseDestinationVC.swift in Sources */,
 				F340FE9B228CF30F008640F5 /* TripModel.swift in Sources */,
 				F340FEA3228CFC2E008640F5 /* ButtonExtentions.swift in Sources */,
 				F340FE74228CEB5B008640F5 /* AppDelegate.swift in Sources */,
